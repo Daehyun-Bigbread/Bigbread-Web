@@ -1,0 +1,16 @@
+body {
+    background-image: url(media/background.avif);
+    background-repeat: repeat;
+}
+h2 {
+        font-family: 'preconnect', cursive;
+        color: red;
+}
+h3 {
+        font-family: 'preconnect', cursive;
+        color: red;
+}
+img{
+    border: 15px groove #888;
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>폼 입력 그룹으로 묶기</title>
+</head>
+<body>
+    <h3>식당 예약하기</h3>
+    <form>
+        <fieldset>
+            <legend>예약자 정보</legend>
+            <label for="name">예약자: </label><input type="register"><br>
+            <label for="contact">연락처: </label><input type="tel" id="contact" name="contact" value="010-1234-5678">
+        </fieldset>
+    </form>
+    <br>
+    <form>
+        <fieldset>
+            <legend>예약 정보</legend>
+            <label for="date">날짜: </label> <input type="date" id="date" name="date" value="2023-10-03"><br>
+            <label for="time">시간: </label> <input type="time" id="time" name="time" value="18:00"><br>
+            <label for="people">예약인원: </label>
+                <select id="people" name="people">
+                    <option value="1">2명</option>
+                    <option value="2">3명</option>
+                    <option value="3" selected>4명</option>
+                    <option value="4">5명</option>
+                    <option value="5">6명</option>
+                    <option value="6">7명</option>
+                    <option value="7">8명</option>
+                </select><br>
+            <label for="position">위치: 본관<input type="radio" checked> 별관<input type="radio"></label><br>
+            <label for="option">옵션: 아기의자 <input type="checkbox" name="option" value="1"> 채식요리<input type="checkbox" name="option" value="2"> 단독룸<input type="checkbox" name="option" value="3"></label>
+        </fieldset>
+    </form>
+    <br>
+    <label for="reservation"><button type="reservation">예약<button type="reservation">취소</button></label><br>
+</body>
+</html>
