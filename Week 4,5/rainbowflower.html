@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>무지개꽃</title>
+    <style>
+        @keyframes box1ColorAnimation {
+            0%, 100% {background-color: red;}
+            25% {background-color: green;}
+            50% {background-color: blue;}
+            75% {background-color: magenta;}
+        }
+
+        @keyframes box2ColorAnimation {
+            0%, 100% {background-color: green;}
+            25% {background-color: blue;}
+            50% {background-color: magenta;}
+            75% {background-color: red;}
+        }
+
+        @keyframes box3ColorAnimation {
+            0%, 100% {background-color: magenta;}
+            25% {background-color: red;}
+            50% {background-color: green;}
+            75% {background-color: blue;}
+        }
+        
+        @keyframes box4ColorAnimation {
+            0%, 100% {background-color: blue;}
+            25% {background-color: magenta;}
+            50% {background-color: red;}
+            75% {background-color: green;}
+        }
+
+        .box-group {
+            margin-bottom: 5px;
+        }
+
+        .box1, .box2, .box3, .box4 {
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            width: 100px;
+            border: 5px outset skyblue;
+            color: white;
+        }
+
+        .box1 {
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            animation: box1ColorAnimation 4s infinite;
+        }
+
+        .box2 {
+            border-top-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            animation: box2ColorAnimation 4s infinite;
+        }
+
+        .box3 {
+            border-top-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            animation: box3ColorAnimation 4s infinite;
+        }
+
+        .box4 {
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            animation: box4ColorAnimation 4s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-group">
+        <span class="box1">HTML</span>  
+        <span class="box3">CSS</span> 
+    </div>
+
+    <div class="box-group">
+        <span class="box2">JS</span>  
+        <span class="box4">WEB</span> 
+    </div>
+</body>
+
+</html>
