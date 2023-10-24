@@ -1,0 +1,41 @@
+<!-- 예제 2-15 셀이 합쳐진 표 만들기 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>셀이 합쳐진 표</title>
+</head>
+
+<body>
+    <h3>셀이 합쳐진 표</h3>
+    <hr>
+    <table border="1">
+        <caption>과일 가격표</caption>
+        <tr>
+            <th>분류</th>
+            <th>품목</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <th rowspan="3">과일</th>
+            <td>사과</td>
+            <td>25,000원</td>
+        </tr>
+        <tr>
+            <td>바나나</td>
+            <td>10,000원</td>
+        </tr>
+        <tr>
+            <td>복숭아</td>
+            <td>20,000원</td>
+        </tr>
+        <tr>
+            <th>비고</th>
+            <td colspan="2">상자 단위</td>
+        </tr>
+    </table>
+</body>
+
+</html>
