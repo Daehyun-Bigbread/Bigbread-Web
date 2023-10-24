@@ -1,0 +1,25 @@
+<!-- 예제 3–13 형식을 가진 텍스트 입력력 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>형식을 가진 텍스트 입력</title>
+</head>
+
+<body>
+    <h3>회원 정보를 입력해주세요.</h3>
+    <hr>
+    <form>
+        email : <input type="email" placeholder="id@host"><br>
+        홈페이지 : <input type="url" placeholder="http://"><br>
+        전화번호 : <input type="tel" placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}">
+        <input type="submit" value="확인"><br><br>
+        <hr>
+        검색어 : <input type="search" placeholder="검색어">
+        <input type="button" value="검색">
+    </form>
+</body>
+
+</html>
