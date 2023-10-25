@@ -1,0 +1,3 @@
+ul strong { color : dodgerblue; } /* 자손 셀렉터*/
+
+div > strong { background: yellow;} /* 자식 셀렉터*/
