@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>예술 채널</title>
+    <style>
+        @keyframes channel-title-Animation {
+
+            0%,
+            100% {
+                background-color: red;
+            }
+
+            25% {
+                background-color: green;
+            }
+
+            50% {
+                background-color: blue;
+            }
+
+            75% {
+                background-color: magenta;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid blue;
+            background-color: #87ceeb;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 800px;
+            height: 600px;
+            border-radius: 15px;
+        }
+
+        .channel-title {
+            animation: channel-title-Animation 4s infinite;
+            border-radius: 10%;
+            /* 이미지 모서리를 둥글게 만듦 */
+            font-size: 30px;
+            color: aliceblue;
+        }
+
+        img {
+            border-radius: 10%;
+            /* 이미지 모서리를 둥글게 만듦 */
+        }
+
+        img.mmca-icon {
+            border-radius: 50%;
+        
+            border: 2px solid black;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th class="channel-title" style="margin-top: 10px">예술 채널</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="media/starry night.jpg" width=100 height=100><br>
+                    <a href="media/starry night.jpg" target="viewer">별이 빛나는 밤</a>
+                </td>
+                <td rowspan="4">
+                    <iframe name="viewer">
+                        <img src="media/starry night.jpg" width=100 height=100>
+                    </iframe>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="media/waterlilies.jpg" width=100 height=100><br>
+                    <a href="media/waterlilies.jpg" target="viewer">수련</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="media/midnight in paris.jpg" width=100 height=100><br>
+                    <a href="https://youtu.be/FAfR8omt-CY?si=r_HgG8RKHyv630YS" target="viewer">미드나잇 인 파리</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="media/mmca.png" width=100 height=100 class="mmca-icon"><br>
+                    <a href="https://www.mmca.go.kr/" target="viewer">국립현대미술관</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
