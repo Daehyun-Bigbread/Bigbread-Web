@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dooly click</title>
+</head>
+
+<body style="width: 500px; height: 500px;">
+    <!-- 학번, 이름, 게임 제목을 표시하는 헤딩 -->
+    <h3> <실습 7. 둘리를 잡아라> 학번: 202000449, 이름: 김대현</h3>
+
+    <!-- 게임 점수와 단계를 표시하는 폼 -->
+    <form id="game-info">
+        Score: <input id="score" type="text" size="1" value="0" readonly/>
+        Step: <input id="step" type="text" size="1" value="1" readonly/>
+    </form>
+
+    <!-- 게임 캐릭터 둘리 이미지 -->
+    <img id="dooly" src="dooly.jpg" width="100px" style="position: absolute; left: 50px; top: 120px;" />
+
+    <script>
+        // 게임 점수와 단계를 저장하는 변수
+        let score = 0;
+        let step = 1;
+
+        // 둘리 이미지 객체
+        const dooly = document.getElementById('dooly');
+
+        // 둘리의 이동방향을 결정하는 변수 (1: 오른쪽/아래, -1: 왼쪽/위)
+        let directionX = 1;
+        let directionY = 1;
+
+        // 둘리를 이동시키는 함수
+        const moveDooly = () => {
+            // 둘리의 새로운 위치를 계산한다.
+            let doolyX = dooly.offsetLeft + step * directionX;
+            let doolyY = dooly.offsetTop + step * directionY;
+
+            // 둘리가 브라우저 창의 오른쪽/왼쪽 경계에 부딪히면, 반대 방향으로 이동한다.
+            if (doolyX > window.innerWidth - dooly.offsetWidth || doolyX < 0) {
+                directionX *= -1;
+                doolyX = doolyX < 0 ? 0 : window.innerWidth - dooly.offsetWidth;
+            }
+
+            // 둘리가 브라우저 창의 아래/위 경계에 부딪히면, 반대 방향으로 이동한다.
+            if (doolyY > window.innerHeight - dooly.offsetHeight || doolyY < 0) {
+                directionY *= -1;
+                doolyY = doolyY < 0 ? 0 : window.innerHeight - dooly.offsetHeight;
+            }
+
+            // 둘리의 위치를 업데이트한다.
+            dooly.style.left = doolyX + 'px';
+            dooly.style.top = doolyY + 'px';
+        }
+
+        // 게임 점수와 단계를 화면에 업데이트하는 함수
+        const updateScoreStep = () => {
+            document.getElementById('score').value = score;
+            document.getElementById('step').value = step;
+        }
+
+        // 둘리를 클릭하면 점수와 단계를 업데이트하는 이벤트 리스너
+        dooly.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+            score += 10;  // 점수 10점 증가
+            step *= 2;  // 단계 2배 증가
+            updateScoreStep();  // 화면에 업데이트
+        });
+
+        // 100ms마다 둘리를 이동시킨다.
+        setInterval(moveDooly, 100);
+    </script>
+</body>
+
+</html>
