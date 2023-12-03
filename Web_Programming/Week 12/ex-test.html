@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Test</title>
+    <style>
+        input[type=button] {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function randInt(min, max) { return Math.round(min + Math.random()*(max - min)); }
+
+        function doFourOperation() {
+            const op = ['add', 'sub', 'mul', 'div'][randInt(0,3)];
+            const n1 = randInt(0, 10);
+            const n2 = randInt(0, 10);
+            console.log(`http://localhost:54321/${op}/${n1}/${n2}`);
+            location.assign(`http://localhost:54321/${op}/${n1}/${n2}`);
+        }
+
+        function doSort() {
+            const a = randInt(1, 10);
+            const b = randInt(1, 10);
+            const c = randInt(1, 10);
+            location.assign(`http://localhost:54321/sort?a=${a}&b=${b}&c=${c}`);
+        }
+
+        function drawRect() {
+            const width = randInt(5, 30);
+            const height = randInt(3, 10);
+            document.getElementById("width").setAttribute("value", width);
+            document.getElementById("height").setAttribute("value", height);
+        }
+    </script>
+
+    <h3>실습 9. 테스트 앱</h3>
+    <input type="button" value="(1) 사칙연산 계산" onclick="doFourOperation()"><br>
+    <input type="button" value="(2) 숫자 정렬하기" onclick="doSort()"><br>
+    <form method="post" action="http://localhost:54321/rect">
+        <input type="hidden" id="width" name="width" value="3">
+        <input type="hidden" id="height" name="height" value="4">
+        <input type="button" value="(3) 사각형 그리기" onclick="drawRect(); submit();">
+    </form>    
+</body>
+</html>
