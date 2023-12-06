@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>폼 입력 그룹으로 묶기</title>
+</head>
+<body>
+    <p>실습 10. 중고차 검색 학번: 202000449 이름: 김대현</p>
+    <h3>중고차 검색</h3>
+    <form>
+        <label>차종: 
+            <input type="radio" name="car" value="전체" checked>전체 
+            <input type="radio" name="car" value="그랜저">그랜저 
+            <input type="radio" name="car" value="소나타">소나타 
+            <input type="radio" name="car" value="아반떼">아반떼
+        </label><br>
+        <label>색상: 
+            <select id="color" name="color" style="width: 23%;">
+                <option value="전체" selected>전체</option>
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="기타">기타</option>
+            </select>
+        </label><br>
+        <label>가격: 
+            <select id="price" name="price" style="width: 23%;">
+                <option value="전체" selected>전체</option>
+                <option value="2000만원~">2000만원~</option>
+                <option value="1000만원~1990만원">1000만원~1990만원</option>
+                <option value="~990만원">~990만원</option>
+            </select>
+        </label>
+        <br>
+            <div style="text-align:left; padding-left: 4.5%; margin-top: 20px;">
+                <button type="reset" style="width: 11%;">초기화</button>
+                <button type="submit" style="width: 11%;">검색</button>
+            </div>
+        <br>
+    </form>
+</body>
+</html>
