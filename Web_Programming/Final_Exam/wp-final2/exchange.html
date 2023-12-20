@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>환율 계산기</title>
+</head>
+<body>
+    <p>학번: 202000449 이름: 김대현</p>
+    <h3>기말시험 2.환율 계산기</h3>
+    <form action="http://localhost:54321/exchange.money" method="get">
+        <label>
+            <input type="text" id="inputValue" name="Amount" value="100">
+        </label>
+        <label>
+            <select id="moneyselect" name="currency">
+                <option value="usd" selected>미국(USD)</option>
+                <option value="krw">한국(KRW)</option>
+                <option value="eur">유로(EUR)</option>
+                <option value="jpy">일본(JPY)</option>
+            </select>
+        </label>
+        <button type="submit">환율 계산</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>단위변환</title>
+    <style>
+        input {
+            width: 150px;
+            font-size: 14pt;
+            background-color: yellow;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 150px;
+            font-size: 14pt;
+            background-color: skyblue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        function displayAllConversions(inputValue, inputUnit) {
+            const units = ["mm", "cm", "m", "km", "in", "ft", "yd", "mile"];
+            let results = units.map(unit => {
+                let convertedValue = calculateConversion(inputValue, inputUnit, unit);
+                return `${inputValue}${inputUnit} = ${convertedValue.toPrecision(10)}${unit}`;
+            }).join('<br>');
+
+            document.getElementById("conversionResults").innerHTML = results;
+        }
+
+        function convertUnits() {
+            var inputValue = parseFloat(document.getElementById("inputValue").value);
+            var inputUnit = document.getElementById("Unit1select").value;
+            var outputUnit = document.getElementById("Unit2select").value;
+
+            var result = calculateConversion(inputValue, inputUnit, outputUnit);
+
+            document.getElementById("outputValue").value = result.toPrecision(10);
+            displayAllConversions(inputValue, inputUnit);
+        }
+
+        function calculateConversion(value, inputUnit, outputUnit) {
+    
+            var valueInBaseUnit = convertToBaseUnit(value, inputUnit);
+            return convertFromBaseUnit(valueInBaseUnit, outputUnit);
+        }
+
+        function convertToBaseUnit(value, unit) {
+            switch (unit) {
+                case "mm": return value / 1000;
+                case "cm": return value / 100;
+                case "m": return value;
+                case "km": return value * 1000;
+                case "in": return value / 39.3700787;
+                case "ft": return value / 3.2808399;
+                case "yd": return value / 1.0936133;
+                case "mile": return value * 1609.344;
+                default: return value; // 기본값
+            }
+        }
+
+        function convertFromBaseUnit(value, unit) {
+            switch (unit) {
+                case "mm": return value * 1000;
+                case "cm": return value * 100;
+                case "m": return value;
+                case "km": return value / 1000;
+                case "in": return value * 39.3700787;
+                case "ft": return value * 3.2808399;
+                case "yd": return value * 1.0936133;
+                case "mile": return value / 1609.344;
+                default: return value; // 기본값
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("inputValue").addEventListener("input", convertUnits);
+        document.getElementById("Unit1select").addEventListener("change", convertUnits);
+        document.getElementById("Unit2select").addEventListener("change", convertUnits);
+    
+    });
+
+    </script>
+
+    <p>학번: 202000449 이름: 김대현</p>
+    <h3>기말시험 1.단위변환</h3>
+    <form id="conversionForm">
+        <label>
+            <input type="text" id="inputValue" size="15" value="1">
+        </label>
+        <label>
+            <select id="Unit1select" name="input1"> <!-- name 속성 추가 -->
+                <option value="mm" selected>밀리미터(mm)</option>
+                <option value="cm">센티미터(cm)</option>
+                <option value="m">미터(m)</option>
+                <option value="km">킬로미터(km)</option>
+            </select>
+        </label>
+        <label>
+            <input type="text" id="outputValue" size="15" value="1">
+        </label>
+        <label>
+            <select id="Unit2select" name="input2"> <!-- name 속성 추가 -->
+                <option value="in" selected>인치(in)</option>
+                <option value="ft">피트(ft)</option>
+                <option value="yd">야드(yd)</option>
+                <option value="mile">마일(mile)</option>
+            </select>
+        </label>
+    </form>
+    <div id="conversionResults">
+
+    </div>
+
+
+</body>
+
+</html>
